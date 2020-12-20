@@ -102,6 +102,26 @@
           </section>
         </div>
       </div>
+      <div class="alumni">
+        <div class="container">
+<div class="card-deck">
+  <div class="card" v-for="(item, index) in alumni" :key="index">
+    <div class="card-body">
+          <img :src="item.user.photo_url" class="card-img-top mb-4" alt="">
+      <h1 class="font-raleway mb-3">{{item.user.name}}</h1>
+      <section class="font-montserratl">
+        <h3 class="mb-5">{{item.user.from}}</h3>
+      <span v-for="n in item.star" :key="n">
+        <tagicon name="star" scale="2" color="#E38928"/>
+      </span>
+      <h2 class="mb-3 mt-5">{{item.title}}</h2>
+      <p class="card-text">{{item.description}}</p>
+      </section>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
     </div>
     <Footer />
   </div>
@@ -110,14 +130,25 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
+
+import axios from 'axios'
 export default {
   name: 'Course',
   data () {
-    return {}
+    return {
+      alumni: null
+    }
   },
   components: {
     Navbar,
     Footer
+  },
+  mounted () {
+    axios.get('https://raw.githubusercontent.com/cahyo-refactory/RSP-DataSet-SkilTest-FE/main/alumni-report.json')
+      .then((result) => {
+        this.alumni = result.data.data
+        console.log(result)
+      })
   }
 }
 </script>
@@ -224,10 +255,79 @@ export default {
 .description .row {
   padding-bottom: 80px;
 }
+.description .text-center {
+  padding-bottom: 60px;
+}
+.description .text-center h4 {
+    font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(11, 22, 43, 0.6);
+  margin-bottom: 20px;
+}
+.description .text-center h1 {
+    font-weight: 700;
+  font-style: normal;
+  font-size: 38px;
+  line-height: 42px;
+  color: #0b162b;
+  margin-bottom: 20px;
+}
+.description .text-center p {
+    font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #0b162b;
+}
+.alumni {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.alumni .card-deck {
+    margin-right: 85px;
+    margin-left: 85px;
+}
+.alumni .card-deck .card {
+  box-shadow: 0px 12px 20px 0px rgba(223, 223, 223, 0.8);
+  border: none;
+}
+.alumni .card-deck .card h1{
+      font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 32px;
+  color: #111111;
+}
+.alumni .card-deck .card h3{
+      font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #999999;
+}
+.alumni .card-deck .card h2{
+      font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color:rgba(11, 22, 43, 0.8);
+}
+.alumni .card-deck .card p{
+      font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color:#0b162b;
+}
 @media (max-width: 992px) {
   .how-skill-up .container {
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .description img {
+    margin-top: 40px;
   }
 }
 @media (max-width: 767px) {
