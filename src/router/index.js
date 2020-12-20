@@ -3,7 +3,22 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
-
+/*
+component :
+Navbar.vue
+Footer.vue
+NavbarCourse.vue
+FooterCourse.vue
+NavbarBlog.vue
+view :
+Login.vue
+Home.vue
+Course.vue
+ListCourse.vue
+DetailCourse.vue
+Blog.vue
+DetailBlog.vue
+*/
 const routes = [
   {
     path: '/',
@@ -11,12 +26,34 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/course',
+    name: 'Course',
+    component: () => import('../views/Course.vue')
+  },
+  {
+    path: '/listcourse',
+    name: 'ListCourse',
+    component: () => import('../views/ListCourse.vue')
+  },
+  {
+    path: '/detailcourse',
+    name: 'DetailCourse',
+    component: () => import('../views/DetailCourse.vue')
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: () => import('../views/Blog.vue')
+  },
+  {
+    path: '/detailblog',
+    name: 'DetailBlog',
+    component: () => import('../views/DetailBlog.vue')
   }
 ]
 
