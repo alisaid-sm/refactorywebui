@@ -14,7 +14,7 @@
             <router-link to="/course">Courses</router-link>
             <router-link to="#">Custom Trainings</router-link>
             <router-link to="#">Case Studies</router-link>
-            <router-link to="#">Blog</router-link>
+            <router-link to="/blog">Blog</router-link>
           </div>
           <a href="#" id="nav-icon" @click="nav"></a>
         </div>
