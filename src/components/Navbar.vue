@@ -28,10 +28,10 @@ export default {
   methods: {
     nav () {
       const element = document.getElementById('navt')
-      if (this.$route.path === '/') {
-        element.classList.toggle('showtr')
-      } else {
+      if (this.$route.path === '/blog') {
         element.classList.toggle('show')
+      } else {
+        element.classList.toggle('showtr')
       }
       const icon = document.getElementById('nav-icon')
       icon.classList.toggle('nav-exit-icon')

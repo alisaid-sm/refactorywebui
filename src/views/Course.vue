@@ -102,24 +102,49 @@
           </section>
         </div>
       </div>
-      <div class="alumni">
+      <div class="alumni mb-3">
         <div class="container">
-<div class="card-deck">
-  <div class="card" v-for="(item, index) in alumni" :key="index">
-    <div class="card-body">
-          <img :src="item.user.photo_url" class="card-img-top mb-4" alt="">
-      <h1 class="font-raleway mb-3">{{item.user.name}}</h1>
-      <section class="font-montserratl">
-        <h3 class="mb-5">{{item.user.from}}</h3>
-      <span v-for="n in item.star" :key="n">
-        <tagicon name="star" scale="2" color="#E38928"/>
-      </span>
-      <h2 class="mb-3 mt-5">{{item.title}}</h2>
-      <p class="card-text">{{item.description}}</p>
-      </section>
-    </div>
-  </div>
-</div>
+          <div class="card-deck">
+            <div class="card" v-for="(item, index) in alumni" :key="index">
+              <div class="card-body">
+                <img
+                  :src="item.user.photo_url"
+                  class="card-img-top mb-4"
+                  alt=""
+                />
+                <h1 class="font-raleway mb-3">{{ item.user.name }}</h1>
+                <section class="font-montserratl">
+                  <h3 class="mb-5">{{ item.user.from }}</h3>
+                  <span v-for="n in item.star" :key="n">
+                    <tagicon name="star" scale="2" color="#E38928" />
+                  </span>
+                  <h2 class="mb-3 mt-5">{{ item.title }}</h2>
+                  <p class="card-text">{{ item.description }}</p>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ready-learning pb-5 pt-5">
+        <div class="container">
+          <section class="font-montserratl">
+            <h2 class="font-raleway">Ready to start Learning?</h2>
+            <a href="#" class="btn btn-def">Daftar Sekarang</a>
+          </section>
+        </div>
+      </div>
+      <div class="stepbystep mb-5">
+        <div class="container text-center">
+          <section class="font-raleway mb-4">
+            <h3 class="mb-3">LANGKAH MUDAH</h3>
+            <h2>Memulai Belajar di</h2>
+            <h2>Refactory Course</h2>
+          </section>
+          <img class="img-fluid" src="https://i0.wp.com/refactory.id/wp-content/uploads/2020/07/Frame-3-1.png?resize=1024%2C199&ssl=1" alt="">
+          <section class="font-montserratl mt-5">
+            <a href="#" class="btn btn-def">Pelajari Lebih</a>
+          </section>
         </div>
       </div>
     </div>
@@ -144,7 +169,10 @@ export default {
     Footer
   },
   mounted () {
-    axios.get('https://raw.githubusercontent.com/cahyo-refactory/RSP-DataSet-SkilTest-FE/main/alumni-report.json')
+    axios
+      .get(
+        'https://raw.githubusercontent.com/cahyo-refactory/RSP-DataSet-SkilTest-FE/main/alumni-report.json'
+      )
       .then((result) => {
         this.alumni = result.data.data
         console.log(result)
@@ -194,10 +222,12 @@ export default {
   line-height: 50px;
 }
 .font-montserratl {
-  max-width: 600px;
   font-size: 16px;
   font-weight: 400px;
   line-height: 30px;
+}
+.refac-overlay .font-montserratl {
+  max-width: 600px;
   margin: 0px auto;
 }
 .font-montserratl .btn {
@@ -259,7 +289,7 @@ export default {
   padding-bottom: 60px;
 }
 .description .text-center h4 {
-    font-weight: 400;
+  font-weight: 400;
   font-style: normal;
   font-size: 16px;
   line-height: 20px;
@@ -267,7 +297,7 @@ export default {
   margin-bottom: 20px;
 }
 .description .text-center h1 {
-    font-weight: 700;
+  font-weight: 700;
   font-style: normal;
   font-size: 38px;
   line-height: 42px;
@@ -275,7 +305,7 @@ export default {
   margin-bottom: 20px;
 }
 .description .text-center p {
-    font-weight: 400;
+  font-weight: 400;
   font-style: normal;
   font-size: 24px;
   line-height: 30px;
@@ -286,38 +316,73 @@ export default {
   padding-bottom: 50px;
 }
 .alumni .card-deck {
-    margin-right: 85px;
-    margin-left: 85px;
+  margin-right: 85px;
+  margin-left: 85px;
 }
 .alumni .card-deck .card {
   box-shadow: 0px 12px 20px 0px rgba(223, 223, 223, 0.8);
   border: none;
 }
-.alumni .card-deck .card h1{
-      font-weight: 400;
+.alumni .card-deck .card h1 {
+  font-weight: 400;
   font-style: normal;
   font-size: 28px;
   line-height: 32px;
   color: #111111;
 }
-.alumni .card-deck .card h3{
-      font-weight: 500;
+.alumni .card-deck .card h3 {
+  font-weight: 500;
   font-style: normal;
   font-size: 18px;
   line-height: 22px;
   color: #999999;
 }
-.alumni .card-deck .card h2{
-      font-weight: 700;
+.alumni .card-deck .card h2 {
+  font-weight: 700;
   font-style: normal;
   font-size: 18px;
   line-height: 30px;
-  color:rgba(11, 22, 43, 0.8);
+  color: rgba(11, 22, 43, 0.8);
 }
-.alumni .card-deck .card p{
-      font-weight: 300;
+.alumni .card-deck .card p {
+  font-weight: 300;
   font-style: normal;
   font-size: 16px;
+  line-height: 30px;
+  color: #0b162b;
+}
+.ready-learning {
+  background-color: transparent;
+  background-image: linear-gradient(90deg, #127BCA 0%, #35B4AE 100%);
+  margin-bottom: 50px;
+}
+.ready-learning section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ready-learning section h2 {
+  margin-right: 40px;
+}
+.ready-learning .font-raleway {
+    font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+}
+.stepbystep h3 {
+      font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 16px;
+  color: #e48800;
+  letter-spacing: 2px;
+}
+.stepbystep h2 {
+      font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
   line-height: 30px;
   color:#0b162b;
 }
@@ -328,6 +393,10 @@ export default {
   }
   .description img {
     margin-top: 40px;
+  }
+  .alumni .card-deck {
+    margin-right: 15px;
+    margin-left: 15px;
   }
 }
 @media (max-width: 767px) {
@@ -341,5 +410,25 @@ export default {
     max-width: 100%;
     margin-bottom: 40px;
   }
+  .ready-learning section {
+  display: block;
+  text-align: center;
+}
+.ready-learning section h2 {
+    margin-right: 0px;
+  margin-bottom: 40px;
+}
+}
+@media (max-width: 506px) {
+  .refac-overlay .font-montserratl .btn {
+  margin-right: 0px;
+  margin-bottom: 30px;
+}
+.refac-overlay .font-raleway {
+  font-size: 30px;
+  line-height: 38px;
+}
+}
+@media (max-width: 300px) {
 }
 </style>
