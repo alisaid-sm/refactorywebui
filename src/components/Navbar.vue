@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav :class="$route.path === '/blog'? '' : 'bg-tran'">
+    <nav :class="$route.path === '/blog' || $route.path === '/post'? '' : 'bg-tran'">
       <div class="container d-flex">
         <div class="brand">
           <img
@@ -28,7 +28,7 @@ export default {
   methods: {
     nav () {
       const element = document.getElementById('navt')
-      if (this.$route.path === '/blog') {
+      if (this.$route.path === '/blog' || this.$route.path === '/post') {
         element.classList.toggle('show')
       } else {
         element.classList.toggle('showtr')
@@ -76,6 +76,7 @@ nav {
     left: 0;
     background-color: #053547;
     border-bottom: 1px solid white;
+    z-index: 1;
   }
   .show a {
     display: block;

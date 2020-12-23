@@ -51,10 +51,14 @@ export default {
 #navbar-blog h3 {
   display: none;
 }
+#nav-icon {
+  display: none;
+}
 @media (max-width: 992px) {
   .menu-group {
     position: absolute;
     left: -800px;
+    transition: left 0.3s;
   }
   #navbar-blog .menu-group a {
     display: block;
@@ -68,7 +72,8 @@ export default {
     background-color: #095978;
     padding-top: 10px;
     padding-left: 10px;
-    z-index: 1;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+    z-index: 2;
   }
   #navbar-blog .sidebar a {
     padding: 10px;

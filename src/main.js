@@ -10,6 +10,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 
+import VueCarousel from 'vue-carousel'
+
+Vue.use(VueCarousel)
+
 Vue.component('tagicon', Icon)
 
 // Install BootstrapVue
