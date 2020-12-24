@@ -22,7 +22,7 @@
             boost your career.
           </p>
           <section class="font-montserratl mt-5">
-            <a href="#" class="btn btn-def">Masuk & Memulai Belajar</a>
+            <a href="/listcourse" class="btn btn-def">Masuk & Memulai Belajar</a>
             <a href="#" class="btn btn-ol-def">Daftar Sekarang</a>
           </section>
         </div>
