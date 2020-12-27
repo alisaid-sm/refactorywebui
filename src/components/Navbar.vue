@@ -3,10 +3,12 @@
     <nav :class="$route.path === '/blog' || $route.path === '/post'? '' : 'bg-tran'">
       <div class="container d-flex">
         <div class="brand">
-          <img
+          <a href="/">
+            <img
             src="https://i0.wp.com/refactory.id/wp-content/uploads/2020/01/refactory-hd.png?resize=125%2C52&ssl=1"
             alt=""
           />
+          </a>
         </div>
         <div class="menu ml-auto font-montserrat">
           <div id="navt" class="menu-group">

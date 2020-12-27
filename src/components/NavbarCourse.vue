@@ -2,7 +2,7 @@
   <div id="navbar-course">
       <nav>
           <div class="container">
-              <img src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:60/https://www.filepicker.io/api/file/SQaHwR3NQii4vEWEdBeg" alt="">
+              <a href="/"><img src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:60/https://www.filepicker.io/api/file/SQaHwR3NQii4vEWEdBeg" alt=""></a>
               <div class="link-container">
                   <div id="link-nav-course" class="link-nav">
                     <a href="" class="link" >Courses</a>
@@ -34,6 +34,11 @@ export default {
 #navbar-course nav {
     background-color: #35B4AE;
     background-image: linear-gradient(90deg, #2852a2 21.72%, #35B4AE 75.43%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
 }
 #navbar-course nav .container {
     display: flex;
