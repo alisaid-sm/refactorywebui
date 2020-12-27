@@ -38,11 +38,11 @@ export default {
         }).catch(() => {
           alert('user not found')
         })
-    }
-  },
-  ...mapActions({
-    actionLogin: 'auth/login'
-  })
+    },
+    ...mapActions({
+      actionLogin: 'auth/login'
+    })
+  }
 }
 </script>
 
